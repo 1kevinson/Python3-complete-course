@@ -45,4 +45,5 @@ if choice == '3':
     print(input1 , ' / ' , input2 , ' = ' , result)
 if choice == '4':
     result = add(input1, input2)
+    #Nesting string and number
     print(input1 , ' - ' , input2 , ' = ' , result)
