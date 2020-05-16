@@ -32,3 +32,21 @@ elif check == 'Burger':
     print('Yuuummmm !')
 else:
     print('It is actually equal to true')
+
+#For > While > loops
+#For
+names = ['Nick','Marcel','Klaus','Elijah']
+
+for item in names:
+    print('yo ' + item)
+
+#While
+run = True
+current = 1
+
+while run:
+    if current == 10:
+        run = False
+    else:
+        print(current)
+        current += 1
