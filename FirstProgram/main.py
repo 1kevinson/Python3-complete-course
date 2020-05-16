@@ -14,3 +14,11 @@ def print_people(*people):
 
 
 print_people('Miley','Grant','Barnabe','Rugal')
+
+#Return values from functions
+def do_math(n1,n2):
+    return n1 + n2
+
+mathResult = do_math(4,9)
+
+print(mathResult)
