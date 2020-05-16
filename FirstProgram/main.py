@@ -22,3 +22,13 @@ def do_math(n1,n2):
 mathResult = do_math(4,9)
 
 print(mathResult)
+
+#If else statement
+check = True
+
+if check == False:
+    print('It\'s false')
+elif check == 'Burger':
+    print('Yuuummmm !')
+else:
+    print('It is actually equal to true')
