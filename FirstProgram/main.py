@@ -38,7 +38,7 @@ else:
 names = ['Nick','Marcel','Klaus','Elijah']
 
 for item in names:
-    print('yo ' + item)
+    print('yo ' , item)
 
 #While
 run = True
