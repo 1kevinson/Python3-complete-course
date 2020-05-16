@@ -33,10 +33,10 @@ input2 = int(input('Enter second number > '))
 
 if choice == '1':
     result = add(input1, input2)
-    print(input1 + ' + ' + input2 + ' = ' + result)
+    print(input1 , ' , ' , input2 , ' = ' , result)
 if choice == '2':
     result = add(input1, input2)
-    print(input1 + ' * ' + input2 + ' = ' + result)
+    print(input1 , ' * ' , input2 , ' = ' , result)
 if choice == '3':
     if input2 == 0:
         print('you cannot divide by 0... Try again !')
@@ -45,5 +45,5 @@ if choice == '3':
     print(input1 , ' / ' , input2 , ' = ' , result)
 if choice == '4':
     result = add(input1, input2)
-    #Nesting string and number
+    #Nesting string and int
     print(input1 , ' - ' , input2 , ' = ' , result)
