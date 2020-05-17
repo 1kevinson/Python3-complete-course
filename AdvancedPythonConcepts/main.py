@@ -1,5 +1,26 @@
 import random
 
+
+# Define a class
+class Enemy:
+    hp = 200
+
+    def __init__(self, atkl, atkh):
+        self.atkl = atkl
+        self.atkh = atkh
+
+    def getAtk(self):
+        print(self.atkl)
+
+    def getHP(self):
+        print(self.hp)
+
+
+enemy = Enemy(12, 55)
+enemy.getAtk()
+enemy.getHP()
+'''
+
 playerHP = 250
 enemyATKL = 40
 enemyATKH = 60
@@ -18,3 +39,11 @@ while playerHP > 0:
 
     print('Teleported to the inn :(')
     break
+
+'''
+
+# Typo
+'''
+    Every method in python have a self parameter which refer to the entire object
+    __init__ refer to constructor
+'''
