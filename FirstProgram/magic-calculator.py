@@ -19,19 +19,18 @@ def perform_math():
     else:
         equation = input(str(previous))
 
-
     if equation == 'quit':
         print('Goodbye :) !')
         run = False
     else:
-        equation = re.sub('[a-zA-Z,.:()+" "]','',equation)
+        equation = re.sub('[a-zA-Z,.:()+" "]', '', equation)
 
         if previous == 0:
             previous = eval(equation)
         else:
             previous = eval(str(previous) + equation)
 
-        print('You typed' , previous)
+        print('You typed', previous)
 
 
 while run:
