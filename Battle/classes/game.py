@@ -50,6 +50,9 @@ class Person:
     def get_spell_mp_cost(self, i):
         return self.magic[i]["cost"]
 
+    def reduce_mp(self, cost):
+        self.mp -= cost
+
     def take_damage(self, dmg):
         self.hp -= dmg
         if self.hp < 0:
