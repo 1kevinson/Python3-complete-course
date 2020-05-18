@@ -3,13 +3,13 @@ import random
 
 class bcolors:
     HEADER = '\033[95m'
-    OKBLUE = '\033[95m'
-    OKGREEN = '\033[95m'
-    WARNING = '\033[95m'
-    FAIL = '\033[95m'
-    ENDC = '\033[95m'
-    BOLD = '\033[95m'
-    UNDERLINE = '\033[95m'
+    OK_BLUE = '\033[94m'
+    OK_GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    END = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 
 class Person:
@@ -68,5 +68,5 @@ class Person:
         i = 1
         print('Magic :')
         for item in self.magic:
-            print(str(i), ':', item['name'], " (cost: ", item['cost'], ')')
+            print(str(i), ':', item['name'], "(cost:", item['cost'], ')')
             i += 1
