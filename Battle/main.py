@@ -29,6 +29,7 @@ quake = Spell('Quake',14,140,'black')
 cure = Spell('Cure',12,120,'white')
 cura = Spell('Cure',18,200,'white')
 
+#Create array of magics
 magic_array = [fire, thunder,blizzard,meteor,cure,cura]
 
 #Instanciate people
