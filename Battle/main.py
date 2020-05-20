@@ -34,14 +34,15 @@ cura = Spell('Cure', 18, 200, 'white')
 potion = Item('Potion', 'potion', 'Heals 50 HP', 50)
 hiPotion = Item('Hi-Potion', 'potion', 'Heals 100 HP', 100)
 superPotion = Item('Super Potion', 'potion', 'Heals 500 HP', 500)
-elixer = Item('Elixir', 'elixer', 'Fully restore HP/MP of a party member', 9999)
+elixer = Item('Elixer', 'elixer', 'Fully restore HP/MP of a party member', 9999)
 hiElixer = Item('MegaElixir', 'elixer', 'Fully restores  party\'s HP/MP', 9999)
 
 grenade = Item('Grenade', 'attack', 'Deals 500 damage', 500)
 
 # Create array of magics
 magic_array = [fire, thunder, blizzard, meteor, cure, cura]
-item_array = [potion, hiPotion, superPotion, elixer, hiElixer, grenade]
+item_array = [{'item': potion, 'quantity': 15}, {'item': hiPotion, 'quantity': 5}, {'item': superPotion, 'quantity': 5},
+               {'item': elixer, 'quantity': 5}, {'item': hiElixer, 'quantity': 2}, {'item': grenade, 'quantity': 5}]
 
 # Instanciate people
 player = Person(460, 65, 60, 34, magic_array, item_array)
@@ -92,10 +93,22 @@ while running:
         if item_choice == -1:
             continue
 
-        item = player.items[item_choice]
+        if player.items[item_choice]['quantity'] == 0:
+            print(bcolors.FAIL + '\n' + 'None left...' + bcolors.END)
+
+        item = player.items[item_choice]['item']
+        player.items[item_choice]['quantity'] -= 1
 
         if item.type == 'potion':
+            player.heal(item.prop)
             print(bcolors.OK_BLUE + '\n' + item.name, 'heals for', str(item.prop), 'HP.' + bcolors.END)
+        elif item.type == 'elixer':
+            player.hp = player.maxhp
+            player.mp = player.maxmp
+            print(bcolors.OK_GREEN + '\n' + item.name, 'fully restores HP/MP' + bcolors.END)
+        elif item.type == 'attack':
+            enemy.take_damage(item.prop)
+            print(bcolors.FAIL + '\n' + item.name, 'deals', str(item.prop), 'points of damage' + bcolors.END)
 
     # Enemy section ( choose 1 by default to perform an attack)
     enemy_choice = 1
