@@ -19,6 +19,22 @@ Atkh
 Attack power (high)
 '''
 
+# BARS
+print('\n')
+print('NAME                 HP                            MP')
+print('                     _________________             _________________  ')
+print(bcolors.BOLD + 'VALOS:      ' +
+      '460/460 |' + bcolors.OK_GREEN + '█████████████████' + bcolors.END + bcolors.BOLD + '|    ' +
+      ' 65/65 |' + bcolors.OK_BLUE + '█████████████████' + bcolors.END + '| ')
+
+print('                     _________________             _________________  ')
+print('VALOS:      460/460 |                 |     65/65 |                 | ')
+
+print('                     _________________             _________________  ')
+print('VALOS:      460/460 |                 |     65/65 |                 | ')
+
+print('\n')
+
 # Create Black Magic
 fire = Spell('Fire', 10, 100, 'black')
 thunder = Spell('Thunder', 10, 100, 'black')
@@ -42,7 +58,7 @@ grenade = Item('Grenade', 'attack', 'Deals 500 damage', 500)
 # Create array of magics
 magic_array = [fire, thunder, blizzard, meteor, cure, cura]
 item_array = [{'item': potion, 'quantity': 15}, {'item': hiPotion, 'quantity': 5}, {'item': superPotion, 'quantity': 5},
-               {'item': elixer, 'quantity': 5}, {'item': hiElixer, 'quantity': 2}, {'item': grenade, 'quantity': 5}]
+              {'item': elixer, 'quantity': 5}, {'item': hiElixer, 'quantity': 2}, {'item': grenade, 'quantity': 5}]
 
 # Instanciate people
 player = Person(460, 65, 60, 34, magic_array, item_array)
@@ -101,7 +117,7 @@ while running:
 
         if item.type == 'potion':
             player.heal(item.prop)
-            print(bcolors.OK_BLUE + '\n' + item.name, 'heals for', str(item.prop), 'HP.' + bcolors.END)
+            print(bcolors.OK_BLUE + '\n' + item.name, 'heals for', str(item.propa), 'HP.' + bcolors.END)
         elif item.type == 'elixer':
             player.hp = player.maxhp
             player.mp = player.maxmp
@@ -127,5 +143,5 @@ while running:
         print(bcolors.OK_GREEN + 'You win!' + bcolors.END)
         running = False
     elif player.get_hp() == 0:
-        print(bcolors.FAIL + 'You Lose' + bcolors.END)
+        print(bcolors.FAIL + 'Enemy defeated you' + bcolors.END)
         running = False
