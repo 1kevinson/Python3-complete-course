@@ -13,7 +13,7 @@ class bcolors:
 
 
 class Person:
-    def __init__(self, hp, mp, atk, df, magic):
+    def __init__(self, hp, mp, atk, df, magic, items):
         self.maxhp = hp
         self.hp = hp
         self.maxmp = mp
@@ -22,7 +22,8 @@ class Person:
         self.atkh = atk + 10
         self.df = df
         self.magic = magic
-        self.actions = ['attack', 'magic']
+        self.items = items
+        self.actions = ['attack', 'magic', 'items']
 
     def get_hp(self):
         return self.hp
@@ -66,4 +67,11 @@ class Person:
         print(bcolors.OK_BLUE + bcolors.BOLD + 'Magic :' + bcolors.END)
         for item in self.magic:
             print(str(i), ':', item.name, "(cost:", item.cost, ')')
+            i += 1
+
+    def choose_item(self):
+        i = 1
+        print(bcolors.OK_BLUE + bcolors.BOLD + 'Items :' + bcolors.END)
+        for item in self.items:
+            print(str(i), ':', item.name, ":", item.description)
             i += 1
