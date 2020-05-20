@@ -63,7 +63,7 @@ class Person:
 
     def choose_magic(self):
         i = 1
-        print('Magic :')
+        print(bcolors.OK_BLUE + bcolors.BOLD + 'Magic :' + bcolors.END)
         for item in self.magic:
             print(str(i), ':', item.name, "(cost:", item.cost, ')')
             i += 1
