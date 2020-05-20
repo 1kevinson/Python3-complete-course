@@ -15,3 +15,18 @@ else:
 
 old_file.seek(0)
 old_file.write(json.dumps(data))
+
+
+'''
+TYPOS - Create Virtualenv
+Use pip3 (Python Package Downloader)
+
+> pip3 install virtualenv
+
+> cd /folder/to/set/env
+
+>  virtualenv 'envName'
+
+>  source 'envName'/bin/activate
+
+'''
